@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>{{PRODUCTNAME}} {{IMAGE}} /// NODE 农场</title>
+    <style type="text/css">
+      @import url("https://fonts.googleapis.com/css2?family=Long+Cang&display=swap");
+
+      *,
+      *::before,
+      *::after {
+        padding: 0;
+        margin: 0;
+        box-sizing: inherit;
+      }
+
+      html {
+        /* 将字体大小设置为10px */
+        font-size: 62.5%;
+        box-sizing: border-box;
+      }
+
+      body {
+        color: #555;
+        padding: 5rem 5rem 10rem;
+        line-height: 1.7;
+        font-family: "Long Cang", cursive;
+        min-height: 100vh;
+        background-image: linear-gradient(to right bottom, #9be15d, #00e3ae);
+      }
+
+      .container {
+        width: 95rem;
+        margin: 0 auto;
+      }
+      h1 {
+        font-size: 5rem;
+        text-align: center;
+        word-spacing: 0.3rem;
+        color: white;
+        transform: skewY(-5deg);
+        position: relative;
+      }
+
+      h1::before {
+        content: "";
+        width: 40%;
+        height: 85%;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: -1;
+        opacity: 0.6;
+        background-image: linear-gradient(to bottom, #9be15d, #00e3ae);
+        transform: translate(-50%, -50%) skewY(10deg);
+      }
+
+      .product {
+        width: 60rem;
+        background-color: white;
+        margin: 0 auto;
+        margin-top: 12rem;
+        box-shadow: 0 0.3rem 6rem 1rem rgba(0, 0, 0, 0.2);
+        position: relative;
+      }
+
+      .product__organic {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        background-image: linear-gradient(to bottom, #9be15d, #00e3ae);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        text-transform: uppercase;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(50%, -40%) rotate(18deg);
+        z-index: 200;
+      }
+
+      h5 {
+        font-weight: 900;
+      }
+
+      .product__back:link,
+      .product__back:active {
+        width: 12rem;
+        height: 4rem;
+        border-radius: 3rem;
+        box-shadow: 0 0.3rem 6rem 1rem rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        z-index: 200;
+        color: black;
+        font-size: 1.5rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        text-decoration: none;
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        margin: 1rem;
+      }
+      .product__back:hover,
+      .product__back:active {
+        background-color: #79e17b;
+      }
+      .emoji__left {
+        font-size: 2rem;
+        margin-right: 1rem;
+      }
+      .product__hero {
+        height: 22rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .product__hero::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.5;
+        background-image: linear-gradient(to bottom, #9be15d, #00e3ae);
+        z-index: 100;
+      }
+
+      .product__emoji {
+        font-size: 15rem;
+        position: absolute;
+      }
+
+      .product__emoji--1 {
+        top: -4rem;
+        left: -2rem;
+        z-index: 15;
+      }
+      .product__emoji--2 {
+        top: -6rem;
+        left: 9rem;
+        z-index: 10;
+      }
+      .product__emoji--3 {
+        top: -7rem;
+        left: 19rem;
+        z-index: 15;
+      }
+      .product__emoji--4 {
+        top: -4rem;
+        left: 30rem;
+        z-index: 10;
+      }
+      .product__emoji--5 {
+        top: -4rem;
+        left: 43rem;
+        z-index: 10;
+      }
+      .product__emoji--6 {
+        top: 4rem;
+        left: 6rem;
+        z-index: 15;
+      }
+      .product__emoji--7 {
+        top: 5rem;
+        left: 19rem;
+        z-index: 12;
+      }
+      .product__emoji--8 {
+        top: 8rem;
+        left: 32rem;
+      }
+      .product__emoji--9 {
+        top: 5rem;
+        left: 47rem;
+      }
+
+      .product__name {
+        background-image: linear-gradient(to bottom, #9be15d, #00e3ae);
+        color: white;
+        font-size: 4rem;
+        padding: 1.5rem 0;
+        width: 100%;
+        text-align: center;
+      }
+
+      .product__details {
+        padding: 3rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+      }
+
+      .product__link:link,
+      .product__link:visited {
+        font-size: 2rem;
+        letter-spacing: 0.3rem;
+        font-weight: 900;
+        padding: 1.5rem;
+        text-transform: uppercase;
+        display: block;
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+        background-color: #79e17b;
+        color: white;
+        transition: all 0.5s;
+        transform: scale(1.1) skewX(-20deg);
+      }
+      .product__link:hover,
+      .product__link:active {
+        transform: scale(1.2) skewX(-20deg);
+        background-color: #9be15d;
+      }
+
+      .product__link span {
+        transform: skewX(20deg);
+      }
+
+      .product__description {
+        font-size: 1.5rem;
+        letter-spacing: 0.1rem;
+        line-height: 2.4;
+        padding: 5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🌽 Node 农场 🥦</h1>
+      </header>
+
+      <main>
+        <figure class="product">
+          <div class="product__organic {{NOT_ORIGANIC}}"><h5>Organic</h5></div>
+          <a href="/index" class="product__back">
+            <span class="emoji__left">👈</span> Back
+          </a>
+          <div class="product__hero">
+            <span class="product__emoji product__emoji--1">🥑</span>
+            <span class="product__emoji product__emoji--2">🥑</span>
+            <span class="product__emoji product__emoji--3">🥑</span>
+            <span class="product__emoji product__emoji--4">🥑</span>
+            <span class="product__emoji product__emoji--5">🥑</span>
+            <span class="product__emoji product__emoji--6">🥑</span>
+            <span class="product__emoji product__emoji--7">🥑</span>
+            <span class="product__emoji product__emoji--8">🥑</span>
+            <span class="product__emoji product__emoji--9">🥑</span>
+          </div>
+          <h2 class="product__name">{{PRODUCTNAME}}</h2>
+          <div class="product__details">
+            <p><span class="emoji__left">🌍</span> From {{FROM}}</p>
+            <p><span class="emoji__left">❤️</span> {{NUTRIENTS}}</p>
+            <p><span class="emoji__left">📦</span> {{QUANTITY}}</p>
+            <p><span class="emoji__left">🏷</span> {{PRICE}} ¥</p>
+          </div>
+
+          <a href="#" class="product__link">
+            <span class="emoji-left">🛒</span>
+            <span>加入购物车 ({{PRICE}}¥)</span>
+          </a>
+
+          <p class="product__description">{{DESCRIPTION}}</p>
+        </figure>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node农场</title>
+    <style type="text/css">
+      /* 
+        COLOR:
+          #9be15d
+          #00e3ae
+          #ddd
+          #79e17b
+          white
+      */
+
+      /* 
+        FONT
+      */
+      @import url("https://fonts.googleapis.com/css2?family=Long+Cang&display=swap");
+
+      *,
+      *::before,
+      *::after {
+        padding: 0;
+        margin: 0;
+        box-sizing: inherit;
+      }
+
+      html {
+        /* 将字体大小设置为10px */
+        font-size: 62.5%;
+        box-sizing: border-box;
+      }
+
+      body {
+        color: #555;
+        padding: 5rem 5rem 10rem;
+        line-height: 1.7;
+        font-family: "Long Cang", cursive;
+        min-height: 100vh;
+        background-image: linear-gradient(to right bottom, #9be15d, #00e3ae);
+      }
+
+      .container {
+        width: 95rem;
+        margin: 0 auto;
+      }
+
+      h1 {
+        font-size: 5rem;
+        text-align: center;
+        word-spacing: 0.3rem;
+        color: white;
+        transform: skewY(-5deg);
+        position: relative;
+      }
+
+      h1::before {
+        content: "";
+        width: 40%;
+        height: 85%;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: -1;
+        opacity: 0.6;
+        background-image: linear-gradient(to bottom, #9be15d, #00e3ae);
+        transform: translate(-50%, -50%) skewY(10deg);
+      }
+
+      .cards-container {
+        margin-top: 12rem;
+      }
+
+      .card {
+        background-color: white;
+        display: flex;
+        transform: skewX(-20deg);
+        box-shadow: 0 2rem 6rem 1rem rgba(0, 0, 0, 0.15);
+        transition: all 0.5s;
+      }
+
+      .card:hover {
+        transform: skewX(-20deg) scale(1.1);
+        box-shadow: 0 2rem 6rem 1rem rgba(0, 0, 0, 0.15);
+      }
+
+      .card:not(:last-child) {
+        margin-bottom: 8rem;
+      }
+
+      .card__emoji {
+        font-size: 5.5rem;
+        letter-spacing: -3rem;
+        padding: 0 5rem 0 1rem;
+        transform: skewX(20deg);
+      }
+
+      .card__title-box {
+        background-image: linear-gradient(to bottom, #9be15d, #00e3ae);
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        padding: 0 3rem;
+      }
+
+      .card__title {
+        color: white;
+        font-size: 3.5rem;
+        transform: skewX(20deg);
+      }
+
+      .card__details {
+        display: flex;
+      }
+      .card__detail-box {
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+      }
+      .card__detail-box:not(:last-child) {
+        border-right: 1px solid #ddd;
+      }
+
+      .card__detail {
+        font-size: 2rem;
+        padding: 0 3rem;
+        transform: skewX(20deg);
+      }
+
+      .card__detail--organic {
+        font-size: 3rem;
+        text-transform: uppercase;
+        background-image: linear-gradient(to right, #9be15d 40%, #00e3ae);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      .not__origanic {
+        display: none;
+      }
+
+      .card__detail--price {
+        font-size: 3rem;
+      }
+
+      .card__link:link,
+      .card__link:visited {
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        background-color: #79e17b;
+        color: white;
+        text-decoration: none;
+        padding: 0 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+      }
+
+      .card__link:hover,
+      .card__link:active {
+        background-color: #9be15d;
+      }
+
+      .card__link span {
+        transform: skewX(20deg);
+      }
+
+      .emoji__right {
+        font-size: 2rem;
+        margin-left: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🌽 Node 农场 🥦</h1>
+      </header>
+      <main>
+        <div class="cards-container">{{CARDSTEMPLATE}}</div>
+      </main>
+    </div>
+  </body>
+</html>
