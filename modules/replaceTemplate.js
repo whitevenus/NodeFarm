@@ -10,6 +10,7 @@ module.exports = (temp, product) => {
     .replace(/{{NUTRIENTS}}/g, product.nutrients)
     .replace(/{{FROM}}/g, product.from)
     .replace(/{{DESCRIPTION}}/g, product.description);
+  // 如果产品是非有机的，则不显示有机标签
   if (!product.organic)
     output = output.replace(/{{NOT_ORIGANIC}}/g, "not__origanic");
   return output;
