@@ -48,6 +48,6 @@ const server = http
       res.end("<h1>Page not found!</h1>");
     }
   })
-  .listen(8080, "127.0.0.1", () => {
-    console.log("正在监听宿主机8080端口....");
+  .listen(8000, "127.0.0.1", () => {
+    console.log("正在监听宿主机8000端口....");
   });
